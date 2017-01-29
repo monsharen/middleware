@@ -21,9 +21,7 @@
 		<div ng-if="!ctrl.authenticationToken">
 			<div class="" style="color: floralwhite;">
 				<center>
-					<h1>Middleware</h1>
-					<br />
-					<p>Log in</p>
+					<h1>Step 1</h1>
 					<br />
 					<button class="btn btn-primary btn-lg btn-info" ng-click="ctrl.login()">Log in with Salesforce</button>
 				</center>
@@ -31,8 +29,17 @@
 		</div>
 
 		<div ng-if="ctrl.authenticationToken">
-			<h1>logged in</h1>
-
+			<center>
+				<h1>Step 2</h1>
+				<p>Register extension ids</p>
+				<form>
+					<input type="text" value="extensionId" /> <button class="btn btn-primary btn-lg btn-info" ng-click="ctrl.addExtensionId()">Add</button>
+					<ul>
+						<li ng-repeat="extensionId in ctrl.extensionIds">{{extensionId}}</li>
+					</ul>
+					<button class="btn btn-primary btn-lg btn-info">Proceed</button>
+				</form>
+			</center>
 		</div>
 	</body>
 </html>

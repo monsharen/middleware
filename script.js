@@ -4,10 +4,15 @@ middlewareApp.controller('MiddlewareController', ['$scope', '$http', '$location'
 	function($scope, $http, $location, alertify, authService) {
 
 	var ctrl = this;
+	this.extensionIds = [];
 	this.authenticationToken = "";
 
 	this.login = function() {
 		authService.authenticate();
+	};
+
+	this.addExtensionId = function(extensionId) {
+		ctrl.extensionIds.push(extensionId);
 	};
 
 	authService.isUserAuthenticated(
