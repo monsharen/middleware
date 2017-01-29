@@ -64,17 +64,18 @@ middlewareServerApp.controller('MiddlewareServerController', ['$scope', '$http',
 	};
 
 	this.sendRequest = function(request) {
-		var headerMap = request.headers;
-		headerMap["Authorization"] = "Bearer " + ctrl.authenticationToken;
 		$.ajax({
 		    url: request.url,
 		    type: request.method,
 		    data: JSON.stringify(request.body),
 		    contentType: "application/json",
-		    headers: headerMap,
+		    headers: request.headers,
 		    jsonp: "callback",
 		    dataType: 'jsonp',
 		    processData: false,
+		    beforeSend: function (xhr) {
+			    xhr.setRequestHeader ("Authorization", "Bearer " + ctrl.authenticationToken);
+			},
 		    success: function (data) {
 		    	console.log("request successfully sent");
 		        console.info(data);
