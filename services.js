@@ -2,8 +2,8 @@ recipeApp.service('authService', ['$http', function($http) {
 
 	var authService = this;
 
-	this.clientId = "88hbcap820qrp36";
-	this.redirectUri = "https://monsharen.github.io/recipes/index.html";
+	this.clientId = "kg957f82kke297v";
+	this.redirectUri = "https://monsharen.github.io/middleware/";
 	this.responseType = "token";
 
 	this.authenticate = function() {
