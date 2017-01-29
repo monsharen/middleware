@@ -69,7 +69,8 @@ middlewareServerApp.controller('MiddlewareServerController', ['$scope', '$http',
 		    type: request.method,
 		    data: request.body,
 		    headers:  request.headers,
-		    dataType: 'json',
+		    jsonp: "callback",
+		    dataType: 'jsonp',
 		    success: function (data) {
 		    	console.log("request successfully sent");
 		        console.info(data);
