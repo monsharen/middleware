@@ -31,22 +31,6 @@ middlewareApp.controller('MiddlewareController', ['$scope', '$http', '$location'
 			console.log("user is not authenticated");
 		}
 	);
-
-	$.ajax({
-	    url: 'https://url.com',
-	    type: 'post',
-	    data: {
-	        access_token: 'XXXXXXXXXXXXXXXXXXX'
-	    },
-	    headers: {
-	        Header_Name_One: 'Header Value One',   //If your header name has spaces or any other char not appropriate
-	        "Header Name Two": 'Header Value Two'  //for object property name, use quoted notation shown in second
-	    },
-	    dataType: 'json',
-	    success: function (data) {
-	        console.info(data);
-	    }
-	});
 	
 }]);
 
@@ -58,8 +42,10 @@ middlewareServerApp.controller('MiddlewareServerController', ['$scope', '$http',
 	function($scope, $http, $location) {
 
 	var ctrl = this;
+
 	this.requests = {};
-	this.requests.addcall = {"WhatId": "WhatId", "Description": "This is a call from Thomas", "ActivityDate": "2014-11-20T14:23:44.000+0000", "Priority": "Normal", "Subject": "Call", "Status": "Completed"};
+	this.requests.addcall = { url: "https://eu11.salesforce.com/services/data/v20.0/sobjects/task/", method: "POST", body: "", headers: {} };
+	this.requests.addcall.body = {"WhatId": "WhatId", "Description": "This is a call from Thomas", "ActivityDate": "2014-11-20T14:23:44.000+0000", "Priority": "Normal", "Subject": "Call", "Status": "Completed"};
 
 	this.getHashParams = function() {
 
@@ -74,6 +60,24 @@ middlewareServerApp.controller('MiddlewareServerController', ['$scope', '$http',
 	       hashParams[d(e[1])] = d(e[2]);
 
 	    return hashParams;
+	};
+
+	this.createTask = function() {
+		ctrl.sendRequest(ctrl.requests.addcall);
+	};
+
+	this.sendRequest = function(request) {
+		$.ajax({
+		    url: request.url,
+		    type: request.method,
+		    data: request.body,
+		    headers:  request.headers,
+		    dataType: 'json',
+		    success: function (data) {
+		    	console.log("request successfully sent");
+		        console.info(data);
+		    }
+		});
 	};
 
 	this.extensionIds = ["1234"];
