@@ -3,7 +3,7 @@ middlewareApp.service('authService', ['$http', function($http) {
 	var authService = this;
 
 	this.clientId = "3MVG9HxRZv05HarS3rJRxFkgo18MPaBPiBc4cpBo46lwG_9z5cVFWoSPOu82oF2YyJdSMPee5PLEXuWwd4bNv";
-	this.redirectUri = "https://monsharen.github.io/middleware/";
+	this.redirectUri = "https://monsharen.github.io/middleware";
 	this.responseType = "token";
 
 	this.authenticate = function() {
