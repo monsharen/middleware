@@ -37,25 +37,26 @@
 			<h1>Available API calls</h1>
 			<h2>Add call</h2>
 			<table>
-				<tr>					
-					<td>WhatId</td><td><input type="text" ng-model="ctrl.phoneNumber" /></td>
-					<td>Description</td><td><input type="text" ng-model="ctrl.requests.addcall.Description" /></td>
-					<td>ActivityDate</td><td><input type="text" ng-model="ctrl.requests.addcall.ActivityDate" /></td>
-					<td>Priority</td><td><input type="text" ng-model="ctrl.requests.addcall.Priority" /></td>
-					<td>Subject</td><td><input type="text" ng-model="ctrl.requests.addcall.Subject" /></td>
-					<td>Status</td><td><input type="text" ng-model="ctrl.requests.addcall.Status" /></td>
+				<tr>
+					<td>WhatId</td>
+					<td>Description</td>
+					<td>ActivityDate</td>
+					<td>Priority</td>
+					<td>Subject</td>
+					<td>Status</td>
+					<td></td>
+				</tr>
+				<tr>			
+					<td><input type="text" ng-model="ctrl.phoneNumber" /></td>
+					<td><input type="text" ng-model="ctrl.requests.addcall.Description" /></td>
+					<td><input type="text" ng-model="ctrl.requests.addcall.ActivityDate" /></td>
+					<td><input type="text" ng-model="ctrl.requests.addcall.Priority" /></td>
+					<td><input type="text" ng-model="ctrl.requests.addcall.Subject" /></td>
+					<td><input type="text" ng-model="ctrl.requests.addcall.Status" /></td>
+					<td><button class="btn btn-primary btn-lg btn-info">Send</button></td>
 				</tr>
 			</table>
 
-			
-			<table>
-				<td>WhatId</td><td>{{ctrl.authenticationToken}}</td>
-				<td>Extension id</td><td>{{ctrl.extensionIds}}</td>
-				<td>Phone number</td><td>{{ctrl.phoneNumber}}</td>
-			</table>
-			<form>
-				<button class="btn btn-primary btn-lg btn-info">Add call</button>
-			</form>
 		</div>
 	</body>
 </html>
