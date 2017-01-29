@@ -35,7 +35,7 @@
 				<form>
 					<input type="text" value="extensionId" /> <button class="btn btn-primary btn-lg btn-info" ng-click="ctrl.addExtensionId()">Add</button>
 					<ul>
-						<li ng-repeat="extensionId in ctrl.extensionIds">{{extensionId}}</li>
+						<li ng-repeat="extensionId in ctrl.extensionIds track by $index">{{extensionId}}</li>
 					</ul>
 					<button class="btn btn-primary btn-lg btn-info">Proceed</button>
 				</form>
