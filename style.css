@@ -3,6 +3,10 @@ body {
 	/* padding: 2em; */
 }
 
+td {
+	padding: 0.5em;
+}
+
 
 a:link {
     color: #FFFFFF;
