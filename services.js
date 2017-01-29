@@ -1,4 +1,4 @@
-recipeApp.service('authService', ['$http', function($http) {
+middlewareApp.service('authService', ['$http', function($http) {
 
 	var authService = this;
 

@@ -17,10 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="spinner.css" />
 		<meta name="referrer" content="default">
 	</head>
-	<body ng-controller="MiddlewareController as ctrl" id="middlewareController" ng-keyup="ctrl.captureKeyPress($event.which);">
-
-		<div ng-show="ctrl.loadingIndicators" id="loadingIndicator" class="loader">Loading...</div>
-
+	<body ng-controller="MiddlewareController as ctrl" id="middlewareController">
 		<div ng-if="!ctrl.authenticationToken">
 			<div class="" style="color: floralwhite;">
 				<center>
