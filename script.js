@@ -69,13 +69,12 @@ middlewareServerApp.controller('MiddlewareServerController', ['$scope', '$http',
 		    type: request.method,
 		    data: JSON.stringify(request.body),
 		    contentType: "application/json",
-		    headers: request.headers,
+		    headers: {
+				"Authorization": "Bearer " + ctrl.authenticationToken
+		    },
 		    jsonp: "callback",
 		    dataType: 'jsonp',
 		    processData: false,
-		    beforeSend: function (xhr) {
-			    xhr.setRequestHeader ("Authorization", "Bearer " + ctrl.authenticationToken);
-			},
 		    success: function (data) {
 		    	console.log("request successfully sent");
 		        console.info(data);
