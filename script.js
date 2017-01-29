@@ -14,7 +14,6 @@ middlewareApp.controller('MiddlewareController', ['$scope', '$http', '$location'
 		function (token) {
 			console.log("user is authenticated");
 			ctrl.authenticationToken = token;
-			ctrl.refresh();
 		},
 		function () {
 			console.log("user is not authenticated");
