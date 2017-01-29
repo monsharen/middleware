@@ -52,7 +52,7 @@ middlewareApp.controller('MiddlewareController', ['$scope', '$http', '$location'
 
 
 
-var middlewareServerApp = angular.module('middlewareServerApp');
+var middlewareServerApp = angular.module('middlewareServerApp', []);
 
 middlewareServerApp.controller('MiddlewareServerController', ['$scope', '$http', '$location', 
 	function($scope, $http, $location) {
