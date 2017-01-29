@@ -67,7 +67,7 @@ middlewareServerApp.controller('MiddlewareServerController', ['$scope', '$http',
 		$.ajax({
 		    url: request.url,
 		    type: request.method,
-		    data: request.body,
+		    data: JSON.stringify(request.body),
 		    headers:  request.headers,
 		    jsonp: "callback",
 		    dataType: 'jsonp',
