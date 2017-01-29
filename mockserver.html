@@ -1,7 +1,7 @@
 <!doctype html>
-<html ng-app="middlewareApp">
+<html ng-app="middlewareServerApp">
 	<head>
-		<title>middleware</title>
+		<title>middlewareServerApp</title>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -17,27 +17,22 @@
 		<link rel="stylesheet" type="text/css" href="spinner.css" />
 		<meta name="referrer" content="default">
 	</head>
-	<body ng-controller="MiddlewareController as ctrl" id="middlewareController">
+	<body ng-controller="MiddlewareServerController as ctrl" id="middlewareServerController">
 		<div ng-if="!ctrl.authenticationToken">
 			<div class="" style="color: floralwhite;">
 				<center>
-					<h1>Step 1</h1>
-					<br />
-					<button class="btn btn-primary btn-lg btn-info" ng-click="ctrl.login()">Log in with Salesforce</button>
+					<h1>Authentication failed</h1>					
 				</center>
 			</div>
 		</div>
 
 		<div ng-if="ctrl.authenticationToken">
 			<center>
-				<h1>Step 2</h1>
-				<p>Register extension ids</p>
-				<form>
-					<input type="text" ng-model="ctrl.extensionId" /> <button class="btn btn-primary btn-lg btn-info" ng-click="ctrl.addExtensionId()">Add</button>
-					<ul>
-						<li ng-repeat="extensionId in ctrl.extensionIds track by $index">{{extensionId}}</li>
-					</ul>
-					<button class="btn btn-primary btn-lg btn-info" ng-click="ctrl.send()">Proceed</button>
+				<h1>Available calls</h1>
+				<p>Salesforce id: {{ctrl.authenticationToken}}</p>
+				<p>Extension ids: {{ctrl.extensionIds}}</p>
+				<form>					
+					<button class="btn btn-primary btn-lg btn-info">Add call</button>
 				</form>
 			</center>
 		</div>
