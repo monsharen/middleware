@@ -43,9 +43,10 @@ middlewareServerApp.controller('MiddlewareServerController', ['$scope', '$http',
 
 	var ctrl = this;
 
+	this.phoneNumber = "07428378687";
 	this.requests = {};
 	this.requests.addcall = { url: "https://eu11.salesforce.com/services/data/v20.0/sobjects/task/", method: "POST", body: "", headers: {} };
-	this.requests.addcall.body = {"WhatId": "WhatId", "Description": "This is a call from Thomas", "ActivityDate": "2014-11-20T14:23:44.000+0000", "Priority": "Normal", "Subject": "Call", "Status": "Completed"};
+	this.requests.addcall.body = {"WhatId": this.phoneNumber, "Description": "This is a call from Thomas", "ActivityDate": "2014-11-20T14:23:44.000+0000", "Priority": "Normal", "Subject": "Call", "Status": "Completed"};
 
 	this.getHashParams = function() {
 
@@ -60,10 +61,6 @@ middlewareServerApp.controller('MiddlewareServerController', ['$scope', '$http',
 	       hashParams[d(e[1])] = d(e[2]);
 
 	    return hashParams;
-	};
-
-	this.createTask = function() {
-		ctrl.sendRequest(ctrl.requests.addcall);
 	};
 
 	this.sendRequest = function(request) {
