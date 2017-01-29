@@ -57,9 +57,7 @@ var middlewareServerApp = angular.module('middlewareServerApp', []);
 middlewareServerApp.controller('MiddlewareServerController', ['$scope', '$http', '$location', 
 	function($scope, $http, $location) {
 
-	var ctrl = this;
-	this.extensionIds = ["1234"];
-	this.authenticationToken = getHashParams()["/access_token"];
+	var ctrl = this;	
 
 	this.getHashParams = function() {
 
@@ -75,5 +73,8 @@ middlewareServerApp.controller('MiddlewareServerController', ['$scope', '$http',
 
 	    return hashParams;
 	};
+
+	this.extensionIds = ["1234"];
+	this.authenticationToken = this.getHashParams()["/access_token"];
 	
 }]);
