@@ -58,6 +58,7 @@ middlewareServerApp.controller('MiddlewareServerController', ['$scope', '$http',
 	function($scope, $http, $location) {
 
 	var ctrl = this;
+	this.requests = {};
 	this.requests.addcall = {"WhatId": "WhatId", "Description": "This is a call from Thomas", "ActivityDate": "2014-11-20T14:23:44.000+0000", "Priority": "Normal", "Subject": "Call", "Status": "Completed"};
 
 	this.getHashParams = function() {
