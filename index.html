@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="middlewareApp">
+	<head>
+		<title>middleware</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+		<script src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.5/dist/js/ngAlertify.js"></script>
+
+		<script src="script.js"></script>
+		<script src="services.js"></script>
+		<script src="directives.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="spinner.css" />
+		<meta name="referrer" content="default">
+	</head>
+	<body ng-controller="MiddlewareController as ctrl" id="middlewareController" ng-keyup="ctrl.captureKeyPress($event.which);">
+
+		<div ng-show="ctrl.loadingIndicators" id="loadingIndicator" class="loader">Loading...</div>
+
+		<div ng-if="!ctrl.authenticationToken">
+			<div class="" style="color: floralwhite;">
+				<center>
+					<h1>Middleware</h1>
+					<br />
+					<p>Log in</p>
+					<br />
+					<button class="btn btn-primary btn-lg btn-info" ng-click="ctrl.login()">Log in with Dropbox</button>
+				</center>
+			</div>
+		</div>
+
+		<div ng-if="ctrl.authenticationToken">
+			<h1>logged in</h1>
+		</div>
+	</body>
+</html>
