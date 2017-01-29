@@ -28,14 +28,13 @@
 			<h1>Global Settings</h1>
 			<table>
 				<tr>
-					<td>Salesforce id</td>
-					<td>Extension id</td>
-					<td>Phone number</td>
+					<td>Salesforce id</td><td>{{ctrl.authenticationToken}}</td>
 				</tr>
 				<tr>
-					<td>{{ctrl.authenticationToken}}</td>
-					<td>{{ctrl.extensionIds}}</td>
-					<td>{{ctrl.phoneNumber}}</td>
+					<td>Extension id</td><td>{{ctrl.extensionIds}}</td>
+				</tr>
+				<tr>
+					<td>Phone number</td><td><input type="text" ng-model="ctrl.phoneNumber" /></td>
 				</tr>
 			</table>
 
