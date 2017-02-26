@@ -2,7 +2,8 @@ middlewareApp.service('authService', ['$http', function($http) {
 
 	var authService = this;
 
-	this.clientId = "3MVG9HxRZv05HarS3rJRxFkgo18MPaBPiBc4cpBo46lwG_9z5cVFWoSPOu82oF2YyJdSMPee5PLEXuWwd4bNv";
+	//this.clientId = "3MVG9HxRZv05HarS3rJRxFkgo18MPaBPiBc4cpBo46lwG_9z5cVFWoSPOu82oF2YyJdSMPee5PLEXuWwd4bNv";
+	this.clientId = "9fa80a44-17ae-4f99-bf5f-7e11296d1bb1 jRskYOVB0nD9qyp0UBqSirYs8HwwHYR4yW2zHvXSOrs";
 	this.redirectUri = "https://monsharen.github.io/middleware";
 	this.responseType = "token";
 
@@ -13,7 +14,12 @@ middlewareApp.service('authService', ['$http', function($http) {
 	
 
 	this.getAuthenticationUrl = function() {
-		return 'https://login.salesforce.com/services/oauth2/authorize?' + 
+		/* return 'https://login.salesforce.com/services/oauth2/authorize?' + 
+			'response_type=' + authService.responseType + 
+			'&client_id=' + authService.clientId + 
+			"&redirect_uri=" + authService.redirectUri;
+			*/
+		return 'https://login.mypurecloud.ie/oauth/authorize?' + 
 			'response_type=' + authService.responseType + 
 			'&client_id=' + authService.clientId + 
 			"&redirect_uri=" + authService.redirectUri;
